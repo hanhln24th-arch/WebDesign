@@ -1,0 +1,138 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        table {
+            background-color: #f9e79f;
+            border: 1px solid #bcbcbc;
+            width: 500px;
+            margin: 20px auto;
+        }
+
+        td {
+            padding: 5px;
+            border-bottom: 0.5px solid #d4ac0d;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 24px;
+            color: #2e86c1;
+            font-weight: bold;
+        }
+
+        fieldset {
+            border: 1px solid #d35400;
+            width: 90%;
+            margin: 5px auto;
+        }
+
+        legend {
+            color: #d35400;
+            font-style: italic;
+        }
+
+        .result {
+            text-align: center;
+            color: #d35400;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .center-btn {
+            text-align: center;
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="tourForm">
+        <table align="center" cellspacing="0">
+            <tr>
+                <td colspan="2" class="header">Đăng ký du lịch</td>
+            </tr>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" id="txtName" style="width: 95%;"></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text" id="txtAddress" style="width: 95%;"></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" id="txtPhone"></td>
+            </tr>
+            <tr>
+                <td>Khách Việt Nam</td>
+                <td><input type="checkbox" id="chkVN" checked></td>
+            </tr>
+            <tr>
+                <td>Chọn tour</td>
+                <td>
+                    <select id="selTour" style="width: 95%;">
+                        <optgroup label="Miền Bắc">
+                            <option>Hà Nội - Hạ Long - Sapa</option>
+                            <option>Hà Nội - Chùa Hương - Ninh Bình</option>
+                        </optgroup>
+                        <optgroup label="Miền Trung">
+                            <option>Huế - Bạch Mã - Đà Nẵng</option>
+                            <option>Nha Trang - Đà Lạt</option>
+                            <option selected>Buôn mê thuật - Gia lai - Kontum</option>
+                        </optgroup>
+                        <optgroup label="Miền Nam">
+                            <option>TP.HCM - Cần Thơ - Cà Mau</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Phương tiện</td>
+                <td>
+                    <input type="radio" name="transport" id="radMayBay"> Máy bay
+                    <input type="radio" name="transport" id="radOto" checked> Xe ô tô
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <fieldset>
+                        <legend align="left">Số lượng đoàn khách</legend>
+                        Người lớn <input type="number" id="numAdult" style="width: 50px;">
+                        Trẻ em <input type="number" id="numChild" style="width: 50px;">
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>Ghi chú thêm</td>
+                <td>
+                    <textarea id="txtNote" rows="3" style="width: 95%;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="center-btn">
+                    <input type="button" value="Đồng ý" onclick="submitForm()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="center-btn">
+                    <div id="msg"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function submitForm() {
+            document.getElementById("msg").innerHTML = "Bạn đã đăng ký thành công!!!";
+        }
+    </script>
+
+</body>
+</html>
